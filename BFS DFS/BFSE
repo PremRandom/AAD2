@@ -1,0 +1,22 @@
+void DFSAlgo(int s) {
+        boolean visited[] = new boolean[V];
+        Stack<Integer> stack = new Stack<>();
+        
+       
+        stack.push(s);
+        visited[s] = true;
+        
+        
+        while (!stack.isEmpty()) {
+            int node = stack.pop();
+            System.out.print(node + "->");
+            
+            
+            for (int neighbor : adj[node]) {
+                if (!visited[neighbor]) {
+                    stack.push(neighbor);
+                    visited[neighbor] = true;
+                }
+            }
+        }
+    }
